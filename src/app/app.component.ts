@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'csc';
+  title = 'data Parent to Child';
+  parentMsg = 'parent data using in child';
 }
