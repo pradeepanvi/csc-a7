@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sibling',
@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sibling.component.css']
 })
 export class SiblingComponent implements OnInit {
-  @Input() msg:string;
+  childMsg = "This is child message";
+  
   constructor() { }
 
   ngOnInit() {
