@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sibling',
   templateUrl: './sibling.component.html',
   styleUrls: ['./sibling.component.css']
 })
-export class SiblingComponent implements OnInit {
+export class SiblingComponent {
   childMsg = "This is child message";
-  
+
+  @Output() messageEvent = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit() {
+  sendMsg(){
+    this.messageEvent.emit(this.childMsg);
   }
 
 }
