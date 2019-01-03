@@ -6,12 +6,36 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-  title = 'data Child to Parent with @output()';
+  title = 'Data Parent to Child and Child to Parent';
+  empList = [
+    {
+      name:'Helo 1'
+    },
+    {
+      name:'Helo 2'
+    },
+    {
+      name:'Helo 3'
+    },
+    {
+      name:'Helo 4'
+    },
+    {
+      name:'Helo 5'
+    },
+    {
+      name:'Helo 6'
+    }
+  ]
+  deleteTxt = '';
+  show = 'none';
 
-  childData:string;
-  
-  receiveMessage($event){
-    this.childData = $event;
+  receiveEvent($event){
+    this.show = 'block';
+    this.deleteTxt = this.empList[$event].name;
+    this.empList.splice($event,1);
+    setTimeout(() => {
+      this.show = 'none';
+    }, 2000);
   }
-
 }

@@ -1,9 +1,10 @@
 <h1>{{title}}</h1>
-
+<div class="alert alert-danger" role="alert" [ngStyle]="{'display': show}">
+  {{deleteTxt}}  Deleted.
+</div>
 <div class="row">
   <div class="col-sm-6">
-    {{ childData }}
-    <app-sibling (messageEvent)="receiveMessage($event)"></app-sibling>
+    <app-sibling (empEvent)="receiveEvent($event)" *ngFor="let list of empList; let i=index" [emp]="list" [index]="i"></app-sibling>
   </div>
   <div class="col-sm-6">
   </div>

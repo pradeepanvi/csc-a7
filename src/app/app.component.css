@@ -1,0 +1,6 @@
+.alert{
+    display: none;
+}
+.alert.show{
+    display: block;
+}

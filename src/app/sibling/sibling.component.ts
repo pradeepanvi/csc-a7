@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sibling',
@@ -6,14 +6,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./sibling.component.css']
 })
 export class SiblingComponent {
-  childMsg = "This is child message";
+  @Input() emp;
+  @Input() index;
 
-  @Output() messageEvent = new EventEmitter();
+  @Output() empEvent = new EventEmitter();
 
   constructor() { }
 
-  sendMsg(){
-    this.messageEvent.emit(this.childMsg);
+  delete(i){
+    this.empEvent.emit(i);
   }
-
 }
